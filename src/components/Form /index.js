@@ -9,7 +9,7 @@ const Form = ({setValueInput,state}) => {
 
     const [erro, setErro] = useState(false)
     const schema = yup.object().shape({
-        inputSeach: yup.string().required("Preencha o campo a cima")
+        inputSeach: yup.string()
     })
 
     const { register, handleSubmit, formState: {errors} } = useForm({
@@ -37,7 +37,7 @@ const Form = ({setValueInput,state}) => {
                     <p>
 
                         {erro && "Repositório inexistente"}
-                        {errors.inputSeach?.message}
+                     
                     </p>
                 <button type = "submit">Search</button>
             </div>
